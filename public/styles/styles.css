@@ -1,0 +1,155 @@
+body {
+    font-family: 'IBM Plex Mono',Sans-Serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    min-height: 100vh;
+    overflow: hidden; /* Pour éviter le défilement horizontal */
+}
+ 
+        /* Création de l'animation de déplacement du dégradé */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Appliquer l'arrière-plan dégradé avec l'animation */
+        body {
+            background: linear-gradient(to right, #4477CE, #1d1c1c);
+            background-size: 200% 100%;
+            animation: gradientAnimation 10s ease-in-out infinite alternate;
+        }
+
+.navbar-brand{
+   /* background-color:#D7E5CA;*/
+    font-size:1.5rem !important;
+    font-weight: bold;
+
+
+   
+}
+.container-fluid{
+   /*background-color: red;*/
+   /*display: flex;
+   justify-content: center;
+   align-items: center;*/
+    height: auto;
+    width: 100%;
+    
+}
+#choix{
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    padding:3px;
+}
+#choix:hover {
+    background-color: #e0e0e0;
+}
+
+#choix:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.hr-h{
+    width: 100%;
+    border-width: 2px;
+    color: black;
+}
+
+option{
+    
+    font-family:'IBM Plex Mono',Sans-Serif ;
+}
+.btn1{
+    cursor: pointer;
+    fill: none;
+    stroke-width: 1;
+    border: none;
+    background-color: #4477CE;
+    border-radius: 3px;
+    color: white;
+    font-family: 'IBM Plex Mono',Sans-Serif;
+    padding: 5px;
+}
+.btn1:hover{
+    background-color: black;
+    color: wheat;
+    animation: gradientAnimation 10s ease-in-out infinite alternate;
+}
+
+.row.row1{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 10px ;
+   margin: 40px;
+}
+
+.col-12{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'IBM Plex Mono',Sans-Serif;
+    font-size: 2.5rem;
+}
+em{
+    font-weight: bold;
+    color: #4477CE;
+    font-size: 2.75rem;
+}
+.col-9{
+    padding: 50px 0px  !important;
+    margin: 10px 0px;
+    /*border: 0.1px solid wheat;*/
+}
+.col-3{
+    background-color: red;
+    color: aliceblue;
+}
+
+@keyframes cardAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.col-4.card{
+    border-radius: 10px 0px;
+    font-family:  'IBM Plex Mono',Sans-Serif;
+    background: linear-gradient(to right, #4477CE, #1d1c1c);
+    background-size: 200% 100%;
+    animation: CardAnimation 1s ease-in-out infinite alternate;
+    border: none;
+}
+
+.col-4.card:hover{
+  background-color: red;
+}
+.col-4.card .card-title{
+    font-weight: bold;
+    
+}
+.col-4.card .card-subtitle.mb-2.text-body-secondary{
+    font-weight: 700 ;
+}
+.col-4.card .card-link{
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+}
+
+.col-4.card .card-link:hover{
+    color: black;
+}

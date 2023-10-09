@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <title>CurrencyApp</title>
+</head>
+<body>
+    <nav class="navbar ">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            CryptoApp<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+              <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25L5.5 13zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28V4.487zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927V8.539z"/>
+            </svg>
+          </a>
+        </div>
+      </nav>
+        <hr class="hr-h">
+      <div class="container-fluid">
+        <div class="row row1">
+          <div class="col-12">
+            <!--recuperer les differents symboles en utilisant l'api Blockchain APi-->
+              <p>Découvrez le monde fascinant des <em>crypto-monnaies</em> : Explorez, Apprenez et Investissez.</p>
+          </div>
+          <div class="col-8">
+              <form id="monFormulaire" action="/chercher" method="post">
+                  <select id="choix" name="symbole">
+                      <% if (locals.content && !locals.content1) { %>
+                          <option value="">Sélectionnez une option</option> <!-- Option pour sélectionner -->
+                          <% content.forEach(element => { %>
+                              <option value="<%= element.symbol %>"><%= element.symbol %></option>
+                          <% }); %>
+                      <% } else if(locals.content1) { %>
+                          <option value="<%=content1.symbol%>"><%=content1.symbol%></option>
+                      <% } else  { %>
+                          <option value="">Aucun élément disponible</option>
+                      <% } %>
+                  </select>
+                  <button type="submit" class="btn1">Chercher</button>
+              </form>
+          </div>
+          <!---Presentation des informations au client-->
+          <% if (locals.content1) { %>
+         
+              
+            <div class="col-4 card" style="width: 28rem;">
+              <div class="card-body">
+                <h5 class="card-title"><%= content1.symbol %></h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Price:<%=content1.price_24h%>$</h6>
+                <p class="card-text">The last 24h volume traded is <b><%=content1.volume_24h%></b> and the last trad price is <b><%=content1.last_trade_price%>$.</b></p>
+                <a href="https://www.coinbase.com/fr" class="card-link">Acheter</a>
+                <a href="/" class="card-link btn-danger">Annuler</a>
+              </div>
+            </div>
+              
+              <% } else{%>
+                <div class="col-4  " style="width: 28rem;" >
+                 
+                  <!-- Le choix du client sera affiché ici -->
+              <%}%>
+         
+      </div>
+      
+      
+      
+      
+     
+        
+        
+      </div>
+
+      
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  
+  
+  
+  
+  
+</body>
+</html>
